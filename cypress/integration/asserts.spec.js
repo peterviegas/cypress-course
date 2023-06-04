@@ -65,3 +65,32 @@ it('Types', () => {
     expect({}).to.be.an('object')
     expect([]).to.be.an('array')
 })
+
+it('String', () => {
+    const str = 'String de teste'
+
+    expect(str).to.be.equal('String de teste')
+    expect(str).to.be.length(15)
+    expect(str).to.be.contains('de')
+    expect(str).to.be.match(/de/)
+    expect(str).to.be.match(/String/)
+    expect(str).to.be.match(/^String/) //deve iniciar com 
+    expect(str).to.be.match(/teste$/) //deve finalizar 
+    expect(str).to.be.match(/.{15}/) //verifica o tamanho 
+    expect(str).to.be.match(/\w+/) //Aceitar apenas letras, uma ou mais
+    expect(str).to.be.match(/\D+/) //Certifica que não contém números
+
+})
+
+it('Numbers', () => {
+    const number = 4
+    const floatNumber = 5.2123
+
+    expect(number).to.be.equal(4)
+    expect(number).to.be.above(3)
+    expect(number).to.be.below(7)
+    expect(floatNumber).to.be.equal(5.2123)
+    expect(floatNumber).to.be.closeTo(5.2, 0.1) //Cinco ponto dois com precisão de 0.1
+    expect(floatNumber).to.be.above(5)
+    expect(floatNumber).to.be.below(6)
+})
