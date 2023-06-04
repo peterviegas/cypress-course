@@ -55,3 +55,13 @@ it('Arrays', () => {
     expect(arr).to.not.be.empty
     expect([]).to.be.empty
 })
+
+it('Types', () => {
+    const num = 1
+    const str = 'String'
+
+    expect(num).to.be.a(("Number"))
+    expect(str).to.be.a('String')
+    expect({}).to.be.an('object')
+    expect([]).to.be.an('array')
+})
